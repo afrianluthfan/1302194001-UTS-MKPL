@@ -98,6 +98,7 @@ public class Employee extends Orang{
 /*
 Referensi
 https://www.youtube.com/watch?v=_dJKsGLZ658&t=118s (Video Pak Jati mengenai Long Parameter List)
+https://www.youtube.com/watch?v=o6qee9Hb0zQ&t=1s (Video Pak Jati mengenai Large Class)
 
 Dibantu oleh:
 

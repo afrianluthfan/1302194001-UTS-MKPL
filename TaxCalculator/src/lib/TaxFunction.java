@@ -15,22 +15,26 @@ public class TaxFunction {
 	 */
 	
 	
-	public static int calculateTax(int monthlySalary, int otherMonthlyIncome, int numberOfMonthWorking, int deductible, boolean isMarried, int numberOfChildren) {
-		
+	public static int calculateTax(int numberOfMonthWorking, int deductible, Income dataIncome, PersonalData dataPersonal) {
+		dataIncome.setMonthlySalary(2000000);
+		dataIncome.setOtherMonthlyIncome(1000000);
+		dataPersonal.setIsMarried(false);
+		dataPersonal.setNumberOfChildren(0);
+
 		int tax = 0;
 		
 		if (numberOfMonthWorking > 12) {
 			System.err.println("More than 12 month working per year");
 		}
 		
-		if (numberOfChildren > 3) {
-			numberOfChildren = 3;
+		if (dataPersonal.getNumberOfChildren() > 3) {
+			dataPersonal.setNumberOfChildren(3);
 		}
 		
-		if (isMarried) {
-			tax = (int) Math.round(0.05 * (((monthlySalary + otherMonthlyIncome) * numberOfMonthWorking) - deductible - (54000000 + 4500000 + (numberOfChildren * 1500000))));
+		if (dataPersonal.getIsMarried()) {
+			tax = (int) Math.round(0.05 * (((dataIncome.getMonthlySalary() + dataIncome.getMonthlySalary()) * numberOfMonthWorking) - deductible - (54000000 + 4500000 + (dataPersonal.getNumberOfChildren() * 1500000))));
 		}else {
-			tax = (int) Math.round(0.05 * (((monthlySalary + otherMonthlyIncome) * numberOfMonthWorking) - deductible - 54000000));
+			tax = (int) Math.round(0.05 * (((dataIncome.getMonthlySalary() + dataIncome.getMonthlySalary()) * numberOfMonthWorking) - deductible - 54000000));
 		}
 		
 		if (tax < 0) {
@@ -42,3 +46,15 @@ public class TaxFunction {
 	}
 	
 }
+
+/*
+Referensi
+https://www.youtube.com/watch?v=_dJKsGLZ658&t=118s (Video Pak Jati mengenai Long Parameter List)
+
+Dibantu oleh:
+
+>Aditya Fauzian R. P. - 1302190085
+>Luqman Hadi - 1302190016
+>Raja Simontua - 1302194094
+>Yudistira Rashaad - 1302190028
+*/
