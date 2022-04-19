@@ -23,7 +23,7 @@ public class Employee extends Orang{
 	private List<String> childNames;
 	private List<String> childIdNumbers;
 	
-	public Employee(String employeeId,   String idNumber,  int yearJoined, int monthJoined, int dayJoined, Orang dataOrang) {
+	public Employee(String employeeId, String idNumber, int yearJoined, int monthJoined, int dayJoined, Orang dataOrang) {
 		this.employeeId = employeeId;
 		this.idNumber = idNumber;
 		this.yearJoined = yearJoined;
