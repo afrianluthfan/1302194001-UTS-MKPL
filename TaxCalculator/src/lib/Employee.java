@@ -4,45 +4,36 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.LinkedList;
 import java.util.List;
+import Orang.java;
 
-public class Employee {
+public class Employee extends Orang{
 
 	private String employeeId;
-	private String firstName;
-	private String lastName;
 	private String idNumber;
-	private String address;
-	
+	private Orang dataOrang;
 	private int yearJoined;
 	private int monthJoined;
 	private int dayJoined;
 	private int monthWorkingInYear;
-	
-	private boolean isForeigner;
-	private boolean gender; //true = Laki-laki, false = Perempuan
-	
 	private int monthlySalary;
 	private int otherMonthlyIncome;
 	private int annualDeductible;
-	
 	private String spouseName;
 	private String spouseIdNumber;
-
 	private List<String> childNames;
 	private List<String> childIdNumbers;
 	
-	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
+	public Employee(String employeeId,   String idNumber,  int yearJoined, int monthJoined, int dayJoined, Orang dataOrang) {
 		this.employeeId = employeeId;
-		this.firstName = firstName;
-		this.lastName = lastName;
 		this.idNumber = idNumber;
-		this.address = address;
 		this.yearJoined = yearJoined;
 		this.monthJoined = monthJoined;
 		this.dayJoined = dayJoined;
-		this.isForeigner = isForeigner;
-		this.gender = gender;
-		
+		dataOrang.setFirstName("Afrian");
+		dataOrang.setLastName("Luthfan");
+		dataOrang.setAddress("bojongsoang");
+		dataOrang.setIsForeigner(false);
+		dataOrang.setGender(true);
 		childNames = new LinkedList<String>();
 		childIdNumbers = new LinkedList<String>();
 	}
@@ -103,3 +94,15 @@ public class Employee {
 		return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, spouseIdNumber.equals(""), childIdNumbers.size());
 	}
 }
+
+/*
+Referensi
+https://www.youtube.com/watch?v=_dJKsGLZ658&t=118s (Video Pak Jati mengenai Long Parameter List)
+
+Dibantu oleh:
+
+>Aditya Fauzian R. P. - 1302190085
+>Luqman Hadi - 1302190016
+>Raja Simontua - 1302194094
+>Yudistira Rashaad - 1302190028
+*/
